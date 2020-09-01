@@ -17,7 +17,7 @@ Each minute 10 new cars are created, every day the robot builder process start o
 
 
 ## Guard robot
--  This robot will be looking for any kind of defect, it will send an alert when the defect is detected and it will inform the details using slack.
+This robot will be looking for any kind of defect, it will send an alert when the defect is detected and it will inform the details using slack.
 Here you go, a curl example (of course you’ll do this using Ruby rather than CURL)
 
 curl -X POST -H 'Content-type: application/json' --data '{"text":"Hello, World!"}' https://hooks.slack.com/services/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`
@@ -31,7 +31,7 @@ Note: The URL =>  https://hooks.slack.com/services/T02SZ8DPK/BL0LEQ72A/NPNK1HLyA
 The factory stock is different from the store stock. Every 30 minutes the guard robot beside of watching our defects will transfer the stock from factory stock to store stock in order to be sold (it will transfer only the non-defective cars stock). 
 
 
-##Robot buyer, order model and store stock
+## Robot buyer, order model and store stock
 
 Once the cars are ready to be sold, the cars are taken to another place, far from the factory and the factory warehouse. Here is where the Robot buyer comes on the scene, this process will buy a random number of cars always < 10 units each X amount of time (it can buy 10 cars/min top). When the robot buyer purchases a car an order will be placed. The robot only can buy 1 car at a time, so each order will have only 1 item. The stock will be decreased when the order is placed. Well, there’s a detail here, the stock we decreased is the store stock. If when the robot buyer wants to purchase a car model and there’s no stock, it won’t be able to buy it and that event will have to be logged.
 
