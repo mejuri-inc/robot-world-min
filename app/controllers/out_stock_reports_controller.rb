@@ -1,5 +1,5 @@
 class OutStockReportsController < ApplicationController
-  before_action :set_out_stock_report, only: [:show, :update, :destroy]
+  before_action :set_out_stock_report, only: %i[show update destroy]
 
   # GET /out_stock_reports
   def index
@@ -39,13 +39,14 @@ class OutStockReportsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_out_stock_report
-      @out_stock_report = OutStockReport.find(params[:id])
-    end
 
-    # Only allow a trusted parameter "white list" through.
-    def out_stock_report_params
-      params.require(:out_stock_report).permit(:order_id)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_out_stock_report
+    @out_stock_report = OutStockReport.find(params[:id])
+  end
+
+  # Only allow a trusted parameter "white list" through.
+  def out_stock_report_params
+    params.require(:out_stock_report).permit(:order_id)
+  end
 end
