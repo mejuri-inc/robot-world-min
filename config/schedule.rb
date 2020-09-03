@@ -12,7 +12,7 @@ set :environment, "development"
 #   rake "some:great:rake:task"
 # end
 
-every 10.minutes do
+every 3.minutes do
   rake "robot_builder_new_cars"
 end
 
@@ -20,11 +20,11 @@ every 3.minutes do
   rake "robot_builder_move_to_electronic_devices"
 end
 
-every 6.minutes do
+every 3.minutes do
   rake "robot_builder_move_to_final_details"
 end
 
-every 9.minutes do
+every 5.minutes do
   rake "robot_builder_move_to_factory_stock"
 end
 #

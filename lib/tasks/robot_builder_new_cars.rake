@@ -6,7 +6,7 @@ task :robot_builder_new_cars  => :environment do
       car_model_id: rand(1...10),
       year: Time.now.year,
       status: 'Building',
-      stage: 'Basic structure'
+      stage: 'Basic_structure'
     )
   end
 end

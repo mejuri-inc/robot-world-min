@@ -11,6 +11,6 @@ task :robot_builder_move_to_electronic_devices  => :environment do
     wheels: true,
     engine: true,
     chassis: true,
-    stage: 'Electronic devices')
+    stage: 'Electronic_devices')
   end
 end
