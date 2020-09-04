@@ -12,7 +12,7 @@ every 2.minutes do
   rake "robot_builder_move_to_final_details"
 end
 
-every 3.minutes do
+every 2.minutes do
   rake "robot_builder_move_to_factory_stock"
 end
 #

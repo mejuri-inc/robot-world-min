@@ -1,7 +1,6 @@
 desc 'move cars to electronic devices line'
 task robot_builder_move_to_electronic_devices: :environment do
-  
-    Utilities.cars_in_stage('Basic_structure').each do |car_data|
+  Utilities.cars_in_stage('Basic_structure').each do |car_data|
     actual_car = Car.find(car_data.id)
 
     fail_probability = Utilities.random_probability(33)

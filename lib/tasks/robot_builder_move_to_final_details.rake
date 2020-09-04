@@ -1,6 +1,5 @@
 desc 'move cars to final details line'
 task robot_builder_move_to_final_details: :environment do
-
   Utilities.cars_in_stage('Electronic_devices').each do |car_data|
     actual_car = Car.find(car_data.id)
 
