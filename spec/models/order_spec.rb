@@ -16,14 +16,15 @@ RSpec.describe Order, type: :model do
       seat: true,
       stage: nil,
       status: 'complete',
-      stock_id: @factory_id).id
+      stock_id: @factory_id
+    ).id
   end
 
   it 'should return true when order is created' do
     order = Order.new(
-      car_id: @car_id, 
-      success_transaction: true, 
-      car_model_id: @car_model_id,
+      car_id: @car_id,
+      success_transaction: true,
+      car_model_id: @car_model_id
     )
     expect(order.valid?).to eq(true)
     expect(order.save).to eq(true)
@@ -31,7 +32,7 @@ RSpec.describe Order, type: :model do
 
   it 'should return false when car_model_id is missing' do
     order = Order.new(
-      car_id: @car_id, 
+      car_id: @car_id,
       success_transaction: true
     )
     expect(order.valid?).to eq(false)
@@ -40,8 +41,8 @@ RSpec.describe Order, type: :model do
 
   it 'should return false when success_transaction is missing' do
     order = Order.new(
-      car_id: @car_id, 
-      car_model_id: @car_model_id,
+      car_id: @car_id,
+      car_model_id: @car_model_id
     )
     expect(order.valid?).to eq(false)
     expect(order.save).to eq(false)

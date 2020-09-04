@@ -30,7 +30,7 @@ RSpec.describe Car, type: :model do
   it 'should return false when year is missing' do
     car = Car.new(
       car_model_id: @car_model_id,
-      status: 'Building',
+      status: 'Building'
     )
     expect(car.valid?).to eq(false)
     expect(car.save).to eq(false)
