@@ -4,7 +4,7 @@ class Utilities
   end
 
   def self.random_probability(prob)
-    rand(1..100) % prob.zero?
+    (rand(1..100) % prob).zero?
   end
 
   def self.cars_in_stage(stage)
