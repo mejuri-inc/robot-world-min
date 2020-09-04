@@ -7,8 +7,10 @@ task :robot_builder_move_to_factory_stock  => :environment do
 
   actual_car = Car.find(car_data.id)
 
+  fail_probability = rand(1..100) % 68 == 0
+
   actual_car.update(
-    seat: true,
+    seat: (fail_probability ? false : true ),
     stage: 'Factory_stock',
     status: 'Complete',
     stock_id: 1)
